@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Arena Estelar</title>
+<meta name="description" content="Arena de combate offline: luchadores, cajas y supers. Jugá sin internet.">
+<meta name="theme-color" content="#0e1024">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Arena Estelar">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Barra superior de recursos -->
+  <header id="topbar">
+    <div class="res res-trophy"><span class="ic">🏆</span><b id="r-trophy">0</b></div>
+    <div class="res res-gold"><span class="ic">🪙</span><b id="r-gold">∞</b></div>
+    <div class="res res-gem"><span class="ic">💎</span><b id="r-gem">∞</b></div>
+    <button id="btn-mute" class="iconbtn" aria-label="Sonido">🔊</button>
+  </header>
+
+  <!-- Pantallas de menú -->
+  <main id="screens">
+    <section id="s-inicio" class="screen active"></section>
+    <section id="s-luchadores" class="screen"></section>
+    <section id="s-mejoras" class="screen"></section>
+    <section id="s-cajas" class="screen"></section>
+  </main>
+
+  <!-- Navegación inferior -->
+  <nav id="nav">
+    <button data-s="cajas"><span class="ni">🎁</span><span>Cajas</span></button>
+    <button data-s="luchadores"><span class="ni">🦸</span><span>Equipo</span></button>
+    <button data-s="inicio" class="on"><span class="ni">⚔️</span><span>Jugar</span></button>
+    <button data-s="mejoras"><span class="ni">⬆️</span><span>Mejoras</span></button>
+  </nav>
+</div>
+
+<!-- Capa de batalla -->
+<div id="battle" class="hidden">
+  <canvas id="cv"></canvas>
+  <div id="hud"></div>
+  <button id="btn-quit" class="iconbtn" aria-label="Salir">✕</button>
+</div>
+
+<!-- Capa de resultado -->
+<div id="overlay" class="hidden"></div>
+
+<script src="data.js"></script>
+<script src="art.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+<script src="ui.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
